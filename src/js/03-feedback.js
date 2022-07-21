@@ -7,10 +7,10 @@ const LOCALSTORAGE_KEY = 'feedback-form-state';
 updateInput();
 function updateInput() {
   if (localStorage.length >= 1) {
-    inputRef.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
-    textareaRef.value = JSON.parse(
-      localStorage.getItem(LOCALSTORAGE_KEY)
-    ).message;
+    inputRef.value =
+      JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email || '';
+    textareaRef.value =
+      JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message || '';
   }
 }
 const hendleInput = () => {
