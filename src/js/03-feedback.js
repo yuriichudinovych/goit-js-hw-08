@@ -11,6 +11,9 @@ function updateInput() {
       JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email || '';
     textareaRef.value =
       JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message || '';
+  } else {
+    inputRef.value = '';
+    textareaRef.value = '';
   }
 }
 const hendleInput = () => {
