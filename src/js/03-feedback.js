@@ -29,5 +29,5 @@ feedbackFormRef.addEventListener('submit', e => {
   e.preventDefault();
   e.currentTarget.reset();
   console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
-  localStorage.clear();
+  localStorage.removeItem(LOCALSTORAGE_KEY);
 });
