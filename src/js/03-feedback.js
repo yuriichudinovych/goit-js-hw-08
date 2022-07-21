@@ -6,11 +6,11 @@ const LOCALSTORAGE_KEY = 'feedback-form-state';
 
 updateInput();
 function updateInput() {
-  if (localStorage.length >= 1) {
-    inputRef.value =
-      JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email || '';
-    textareaRef.value =
-      JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message || '';
+  if (localStorage.getItem(LOCALSTORAGE_KEY) !== null) {
+    inputRef.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
+    textareaRef.value = JSON.parse(
+      localStorage.getItem(LOCALSTORAGE_KEY)
+    ).message;
   } else {
     inputRef.value = '';
     textareaRef.value = '';
