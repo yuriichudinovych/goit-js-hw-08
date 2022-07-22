@@ -27,6 +27,9 @@ textareaRef.addEventListener('input', throttledOnInput);
 
 feedbackFormRef.addEventListener('submit', e => {
   e.preventDefault();
+  if (inputRef.value === '' || textareaRef.value === '') {
+    return console.log('Please fill in all the fields!');
+  }
   e.currentTarget.reset();
   console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
   localStorage.removeItem(LOCALSTORAGE_KEY);
