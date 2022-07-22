@@ -24,7 +24,11 @@ function setTimeupdate() {
       .setCurrentTime(
         JSON.parse(localStorage.getItem('videoplayer-current-time')).seconds
       )
-      .then(function (seconds) {})
+      .then(function (seconds) {
+        seconds = JSON.parse(
+          localStorage.getItem('videoplayer-current-time')
+        ).seconds;
+      })
       .catch(function (error) {
         switch (error.name) {
           case 'RangeError':
